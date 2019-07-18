@@ -1,9 +1,19 @@
 #include <iostream>
 #include <Windows.h>
+#include <string>
+using std::string;
 using namespace std;
 
-int main() {
+int main() 
+{
 
+string GetActiveWindowTitle()
+{
+ char wnd_title[256];
+ HWND hwnd=GetForegroundWindow(); 
+ GetWindowText(hwnd,wnd_title,sizeof(wnd_title));
+ return wnd_title;
+}
 	DWORD NumToSleep = 1000;
 	int TimeToSleep = 1000;
 	bool click = false;
@@ -17,22 +27,28 @@ int main() {
 	cout << endl << "Aperte DOWN para diminuir o delay" << endl;
 	cout << "----------------------------------" << endl;
 
-	while (1) {
+	while (1 || GetActiveWindowTitle = "Minecraft 1.14") 
+	{
 
-		if (GetAsyncKeyState('F')) {
+		if (GetAsyncKeyState('F')) 
+		{
 			click = true;
 		}
-		if (GetAsyncKeyState('G')) {
+		else if (GetAsyncKeyState('G'))
+		{
 			click = false;
 		}
-		if (click == false) {
+		else if (click == false)
+		{
 			mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
 		}
-		if (GetAsyncKeyState(VK_UP) & 0) {
+		else if (GetAsyncKeyState(VK_UP) & 0) 
+		{
 			NumToSleep += TimeToSleep;
 			cout << "Valor do delay: " << NumToSleep;
 		}
-		if (GetAsyncKeyState(VK_DOWN) & 0) {
+		else if (GetAsyncKeyState(VK_DOWN) & 0)
+		{
 			NumToSleep -= TimeToSleep;
 			cout << "Valor do delay: " << NumToSleep;
 		}
@@ -40,6 +56,6 @@ int main() {
 		Sleep(NumToSleep);
 	}
 
-	system("PAUSE");
+	system("pause");
 	return 0;
 }
