@@ -6,13 +6,15 @@ using namespace std;
 
 int main() 
 {
-
-string GetActiveWindowTitle()
+while (true = true)
 {
- char wnd_title[256];
- HWND hwnd=GetForegroundWindow(); 
- GetWindowText(hwnd,wnd_title,sizeof(wnd_title));
- return wnd_title;
+	string GetActiveWindowTitle()
+	{
+	char wnd_title[256];
+	HWND hwnd=GetForegroundWindow(); 
+	GetWindowText(hwnd,wnd_title,sizeof(wnd_title));
+	return wnd_title;
+	}
 }
 	DWORD NumToSleep = 1000;
 	int TimeToSleep = 1000;
